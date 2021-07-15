@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    [
+      "./babel-plugins/myBabelPluginComponent",
+      {
+        "libraryName": "element-ui"
+      }
+    ]
+  ]
+}
