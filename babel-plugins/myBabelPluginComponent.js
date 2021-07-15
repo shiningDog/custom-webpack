@@ -10,7 +10,9 @@ module.exports = function ({ types }) {
 
   //创建require节点
   function creatRequire(name) {
+    // 设置横线名
     const underlineName = umpHunderline(name);
+    // 导出创建好的ast
     return types.VariableDeclaration("const", [
       types.VariableDeclarator(
         types.Identifier(name),
@@ -23,7 +25,9 @@ module.exports = function ({ types }) {
 
   return {
     visitor: {
+      // 初始块，只执行一次的代码块
       Program(_, { opts }) {
+        // 获取按需引入的包名
         libraryName = opts.libraryName || "element-ui";
       },
       ImportDeclaration(path) {
